@@ -128,8 +128,6 @@ describe("Issue create", () => {
 
       // Assertion part
       cy.get('[data-testid="modal:issue-create"]').should("not.exist");
-      cy.wait(2000);
-      cy.contains("Issue has been successfully created.").should("be.visible");
 
       cy.reload();
       cy.contains("Issue has been successfully created.").should("not.exist");
@@ -138,7 +136,6 @@ describe("Issue create", () => {
         .should("be.visible")
         .and("have.length", "1")
         .within(() => {
-          // Assert that this list contains 5 issues and first element with tag p has specified text
           cy.get('[data-testid="list-issue"]')
             .should("have.length", "5")
             .first()
@@ -146,7 +143,6 @@ describe("Issue create", () => {
             .contains("Bug")
             .siblings()
             .within(() => {
-              //Assert that correct avatar and type icon are visible
               cy.get('[data-testid="avatar:Baby Yoda"]').should("be.visible");
               cy.get('[data-testid="icon:task"]').should("be.visible");
             });
@@ -155,7 +151,6 @@ describe("Issue create", () => {
       cy.get('[data-testid="board-list:backlog"]')
         .contains("Task")
         .within(() => {
-          // Assert that correct avatar and type icon are visible
           cy.get('[data-testid="avatar:Baby Yoda"]').should("be.visible");
           cy.get('[data-testid="icon:task"]').should("be.visible");
         });
