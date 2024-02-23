@@ -48,10 +48,3 @@ describe("Issue deletion", () => {
     });
   });
 });
-
-// Reuse the same beforeEach() block.
-// Assert the visibility of the issue detail view modal.
-// Click the Delete Issue button.
-// Cancel the deletion in the confirmation pop-up.
-// Assert that the deletion confirmation dialogue is not visible.
-// Assert that the issue is not deleted and is still displayed on the Jira board.
